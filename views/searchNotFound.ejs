@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main>
+      <h1 class="text-center mt-5 pt-5">
+        No se ha encontrado nada relacionado con: <%= type %>
+      </h1>
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <img src="/assets/404.png" alt="404" class="w-25" />
+      </div>
+    </main>
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>

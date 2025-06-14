@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+    <title>Detalles y Características</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main class="overflow-hidden">
+      <h1 class="text-center mt-5 mb-5 pt-5">Detalles y Características</h1>
+      <div class="container-xxl py-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-lg-5 d-flex justify-content-center">
+            <div>
+              <img
+                src="/images/designs/<%= result.img_designer ? result.img_designer : 'default.jpg' %>"
+                alt="Imagen del diseño"
+                class="img-fluid rounded shadow"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="p-4">
+              <ul class="fs-5">
+                <li><strong>Nombre:</strong> <%= result.name %></li>
+                <li><strong>Género:</strong> <%= result.orientation %></li>
+                <li><strong>Tela:</strong> <%= result.fabric %></li>
+                <li><strong>Color:</strong> <%= result.color %></li>
+                <li><strong>Categoría:</strong> <%= result.type %></li>
+                <li><strong>Descripción:</strong> <%= result.description %></li>
+              </ul>
+              <button
+                class="btn btn-secondary mx-3"
+                onclick="window.location.href='/designer/showDesignerf/<%= result.id_designer %>'"
+              >
+                Volver
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>

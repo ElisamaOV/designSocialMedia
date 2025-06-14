@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main>
+      <h1 class="text-center mt-5 pt-5">Resultados de: <%= type %></h1>
+      <div class="container-xxl mt-5">
+        <div class="row">
+          <% result.forEach((elem) => { %>
+          <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+            <button
+              class="border-0 bg-transparent"
+              onclick="window.location.href='/designer/showDesignerf/<%= elem.id_designer %>'"
+            >
+              <div class="profile-card-2">
+                <img
+                  src="/images/designs/<%= elem.img_designer?elem.img_designer:'default.jpg'%>"
+                  class="img-fluid"
+                />
+                <div class="profile-name">
+                  <%= elem.name %> <%= elem.lastname %>
+                </div>
+              </div>
+            </button>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>

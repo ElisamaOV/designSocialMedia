@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main class="overflow-hidden">
+      <section
+        class="section-1 py-5 d-flex justify-content-center align-content-center align-items-center"
+      >
+        <h1 class="text-white fs-1 text-center">
+          Donde la moda se encuentra con el Arte
+        </h1>
+      </section>
+      <section class="section-hombre g-0">
+        <video
+          src="/assets/hombre.mp4"
+          autoplay
+          loop
+          muted
+          preload
+          class="g-0"
+        ></video>
+        <div class="overlay"></div>
+        <button
+          class="btn bg-transparent border text-white shadow-lg"
+          onclick="window.location.href='/designs/man'"
+        >
+          L'ArtDuStyle Men
+        </button>
+      </section>
+      <section class="section-2">
+        <div class="container-xxl">
+          <h2 class="text-center pt-5">Nuestros diseñadores</h2>
+          <div class="row">
+            <% result.forEach((elem) => { %>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+              <button
+                class="border-0 bg-transparent"
+                onclick="window.location.href='/designer/showDesignerf/<%= elem.id_designer %>'"
+              >
+                <div class="profile-card-2">
+                  <img
+                    src="/images/designers/<%= elem.img_designer?elem.img_designer:'default.jpg'%>"
+                    class="img img-fluid shadow-lg"
+                  />
+                  <div class="profile-name">
+                    <%= elem.name %> <%= elem.lastname %>
+                  </div>
+                  <div class="profile-city">Diseñador/a de <%= elem.city%></div>
+                </div>
+              </button>
+            </div>
+            <% }) %>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+              <button
+                class="bg-transparent border-0"
+                onclick="window.location.href='/designer/createDesigner'"
+              >
+                <div class="profile-card-2">
+                  <img src="/assets/not-register.jpg" class="img img-fluid" />
+                  <div class="profile-name">
+                    <p>¿Dónde estás tú?</p>
+                  </div>
+                  <div class="profile-city">Registrate</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-mujer">
+        <video
+          src="/assets/mujer.mp4"
+          autoplay
+          loop
+          muted
+          preload
+          class="g-0"
+        ></video>
+        <div class="overlay"></div>
+        <button
+          class="btn bg-transparent border text-white shadow-lg"
+          onclick="window.location.href='/designs/woman'"
+        >
+          L'ArtDuStyle Woman
+        </button>
+      </section>
+    </main>
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>

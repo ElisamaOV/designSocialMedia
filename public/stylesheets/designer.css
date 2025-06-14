@@ -1,0 +1,16 @@
+.designer-info-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.5);
+  color: #333;
+}
+
+.designer-info-card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #422;
+}
+
+.designer-info-card ul li {
+  margin-bottom: 0.75rem;
+}

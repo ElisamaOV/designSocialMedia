@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main>
+      <h1 class="text-center mt-5 mb-5 pt-5">Detalles y Características</h1>
+      <div class="container-xxl">
+        <div class="row row-gap-5 align-items-center">
+          <div
+            class="col-12 col-sm-6 col-lg-6 d-flex justify-content-center py-5"
+          >
+            <img
+              class="img-fluid shadow-lg"
+              src="/images/designs/<%= result.img_designer?result.img_designer:'default.jpg'%>"
+              alt="imagen"
+            />
+          </div>
+          <div class="col-12 col-md-6 col-lg-6 fs-5 align-items-center">
+            <form
+              action="/designs/editDesign/<%= result.id_design %>"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <div class="form-group">
+                <label for="exampleInputName">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputName"
+                  value="<%= result.name%>"
+                  name="name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputOrientation">Género</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputOrientation"
+                  value="<%= result.orientation%>"
+                  name="orientation"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFabric">Tela</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputFabric"
+                  value="<%= result.fabric%>"
+                  name="fabric"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputColor">Color</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputColor"
+                  value="<%= result.color%>"
+                  name="color"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputType">Categoría</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputType"
+                  value="<%= result.type%>"
+                  name="type"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputDescription">Descripción</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputDescription"
+                  value="<%= result.description%>"
+                  name="description"
+                />
+              </div>
+              <div class="form-group mt-5">
+                <label for="exampleInputPhoto">
+                  <img src="/assets/upload.jpg" style="width: 50px" alt="" />
+                  Cambiar foto
+                </label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="exampleInputPhoto"
+                  name="img"
+                  hidden
+                />
+              </div>
+              <button type="submit" class="btn btn-success mt-5">
+                Actualizar
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary mt-5"
+                onclick="window.location.href='/designs/showDesign/<%= result.id_design%>'"
+              >
+                Cancelar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>

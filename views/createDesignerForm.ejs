@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main>
+      <section>
+        <div class="container-xxl">
+          <h1 class="text-center mb-5 mt-5 pt-5">
+            ¡Regístrate como diseñador!
+          </h1>
+          <div class="pb-5">
+            <form
+              action="/designer/createDesigner"
+              method="post"
+              enctype="multipart/form-data"
+              class="bg-white p-4 rounded-4 shadow-lg"
+            >
+              <div class="row">
+                <div class="col-12 col-sm-6 col-lg-6">
+                  <div class="mb-3">
+                    <label for="exampleInputName" class="form-label"
+                      >Nombre</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputName"
+                      name="name"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputLastname" class="form-label"
+                      >Apellidos</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputLastname"
+                      name="lastname"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label"
+                      >E-mail</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail"
+                      name="email"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword" class="form-label"
+                      >Contraseña</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="exampleInputPassword"
+                      name="password"
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-6">
+                  <div class="mb-3">
+                    <label for="exampleInputPassword2" class="form-label"
+                      >Confirmar Contraseña</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="exampleInputPassword2"
+                      name="repPassword"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputDescription" class="form-label"
+                      >Descripción</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputDescription"
+                      name="description"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputCity" class="form-label"
+                      >Ciudad</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputCity"
+                      name="city"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPhone" class="form-label"
+                      >Teléfono</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputPhone"
+                      name="phone"
+                    />
+                  </div>
+                  <p class="text-danger mt-3"><%= advice %></p>
+                  <p class="text-success"><%= confirm %></p>
+                </div>
+              </div>
+              <div class="mt-4">
+                <label
+                  for="exampleInputPhote"
+                  class="form-label d-flex align-items-center gap-2"
+                >
+                  <img src="/assets/upload.jpg" alt="" style="width: 40px" />
+                  Agrega tu foto de perfil
+                </label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="exampleInputPhote"
+                  name="img"
+                  hidden
+                />
+              </div>
+              <div class="mt-5 d-flex gap-3">
+                <button type="submit" class="btn btn-success px-4">
+                  Enviar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary px-4"
+                  onclick="window.location.href='/'"
+                >
+                  Volver
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>

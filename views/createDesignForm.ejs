@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main>
+      <h1 class="text-center pt-5 mb-5">Registrar nuevo producto</h1>
+      <div class="container-xxl">
+        <div class="p-4 bg-white rounded">
+          <form
+            action="/designs/createDesign/<%= id %>"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="row d-flex">
+              <div class="col-12 col-sm-6 col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputName">Nombre de la prenda</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputName"
+                    aria-describedby="nameHelp"
+                    name="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputGender">Género</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputGender"
+                    name="orientation"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFabric">Material</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputFabric"
+                    name="fabric"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword">Color</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputColor"
+                    name="color"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputType">Categoría de prenda</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputType"
+                    name="type"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputDescription">Descripcion</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputDescription"
+                    name="description"
+                  />
+                </div>
+                <div class="form-group pt-5">
+                  <label for="exampleInputPhote"
+                    ><img
+                      src="/assets/upload.jpg"
+                      style="width: 50px"
+                      alt="img-design"
+                    />
+                    Agrega tu foto de perfil</label
+                  >
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="exampleInputPhote"
+                    name="img"
+                    hidden
+                  />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success mt-5">
+              Registrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary mt-5"
+              onclick="window.location.href='/designer/showDesigner/<%= id %>'"
+            >
+              Cancelar
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>

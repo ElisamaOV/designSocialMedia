@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./modules/links.ejs') %>
+
+    <title>Detalles del diseño</title>
+  </head>
+  <body>
+    <%- include('./modules/navbar.ejs') %>
+    <main class="overflow-hidden">
+      <section>
+        <h1 class="text-center pt-5 pb-5 mt-5">Detalles y Características</h1>
+        <div class="container-xxl py-5">
+          <div class="row justify-content-center align-items-center mb-5">
+            <div class="col-12 col-lg-5 d-flex justify-content-center">
+              <div class="design-img-wrapper">
+                <img
+                  src="/images/designs/<%= result.img_designer ? result.img_designer : 'default.jpg' %>"
+                  alt="imagen"
+                  class="img-fluid rounded shadow"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-lg-7">
+              <div class="design-info-card p-4">
+                <ul class="fs-5">
+                  <li><strong>Nombre:</strong> <%= result.name %></li>
+                  <li><strong>Género:</strong> <%= result.orientation %></li>
+                  <li><strong>Tela:</strong> <%= result.fabric %></li>
+                  <li><strong>Color:</strong> <%= result.color %></li>
+                  <li><strong>Categoría:</strong> <%= result.type %></li>
+                  <li><strong>Descripción:</strong> <%= result.description %></li>
+                </ul>
+                <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                  <button
+                    class="btn btn-success"
+                    onclick="window.location.href='/designs/editDesign/<%= result.id_design %>'"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    class="btn btn-danger"
+                    onclick="window.location.href='/designs/delete/<%= result.id_design %>'"
+                  >
+                    Eliminar
+                  </button>
+                  <button
+                    class="btn btn-secondary"
+                    onclick="window.location.href='/designer/showDesigner/<%= result.id_designer %>'"
+                  >
+                    Volver
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        </div>
+      </section>
+    </main>
+    <%- include('./modules/footer.ejs') %>
+  </body>
+</html>
